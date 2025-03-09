@@ -1,6 +1,16 @@
 const dotenv = require('dotenv');
 const { MongoOIDCError } = require('mongodb');
 dotenv.config();
+require('dotenv').config();
+const { MongoClient } = require('mongodb');
+
+const uri = process.env.MONGODB_URI;
+if (!uri) {
+    throw new Error("MONGODB_URI is not defined in the environment variables.");
+}
+
+const client = new MongoClient(uri);
+
 
 const MongoClient = require('mongodb').MongoClient;
 
