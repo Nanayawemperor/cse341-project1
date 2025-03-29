@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const personal_infoController = require('../controllers/personal_info')
+
+const personal_infoController = require('../controllers/personal_info');
 
 router.get('/', personal_infoController.getAll);
 
